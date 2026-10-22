@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Boxclub Basel – Train hard. Fight smart.">
+  <title>BOXCLUB BASEL | No Excuses</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #090909;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 7%; border-bottom: 1px solid #292929;
+    }
+    .logo { font-size: 20px; font-weight: 900; letter-spacing: 2px; }
+    .logo span { color: #ef2638; }
+    nav a {
+      color: #fff; text-decoration: none; margin-left: 20px;
+      font-size: 12px; letter-spacing: 1px;
+    }
+    .hero {
+      min-height: 80vh; padding: 90px 8%;
+      display: flex; flex-direction: column; justify-content: center;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.96), rgba(0,0,0,.42)),
+        url("https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+    .tag {
+      color: #ef2638; font-size: 12px; font-weight: bold;
+      letter-spacing: 5px; margin-bottom: 22px;
+    }
+    h1 {
+      font-size: clamp(48px, 10vw, 100px);
+      line-height: .92; font-weight: 900; font-style: italic;
+      max-width: 850px;
+    }
+    h1 span { color: #ef2638; }
+    .hero p {
+      margin-top: 25px; color: #ccc; max-width: 470px;
+      line-height: 1.7;
+    }
+    .btn {
+      display: inline-block; margin-top: 30px; padding: 16px 24px;
+      background: #ef2638; color: white; text-decoration: none;
+      font-weight: 900; letter-spacing: 1px; width: fit-content;
+    }
+    section { padding: 75px 8%; }
+    .eyebrow { color: #ef2638; font-size: 12px; letter-spacing: 4px; }
+    h2 { font-size: clamp(32px, 6vw, 55px); margin: 15px 0 25px; }
+    .cards {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 18px; margin-top: 35px;
+    }
+    .card {
+      background: #151515; border: 1px solid #292929; padding: 28px;
+      min-height: 170px;
+    }
+    .card h3 { font-size: 22px; margin-bottom: 12px; }
+    .card p { color: #aaa; line-height: 1.7; }
+    .number { color: #ef2638; font-size: 30px; font-weight: 900; }
+    .cta { background: #ef2638; color: #fff; text-align: center; }
+    .cta .eyebrow { color: #fff; }
+    .cta p { line-height: 1.8; }
+    .cta .btn { background: #090909; }
+    footer {
+      padding: 25px 8%; color: #888; font-size: 12px;
+      display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap;
+    }
+    @media(max-width:600px) {
+      header { padding: 18px 5%; }
+      nav a { margin-left: 9px; font-size: 10px; }
+      .hero { min-height: 75vh; padding: 70px 6%; }
+      section { padding: 55px 6%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">BOXCLUB <span>BASEL</span></div>
+    <nav>
+      <a href="#training">TRAINING</a>
+      <a href="#about">CLUB</a>
+      <a href="#contact">KONTAKT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="tag">DISZIPLIN. KRAFT. RESPEKT.</div>
+      <h1>NO<br>EXCUSES.<br><span>JUST FIGHT.</span></h1>
+      <p>
+        Trainiere deinen Körper. Stärke deinen Geist.
+        Jeder Champion beginnt mit dem ersten Schritt.
+      </p>
+      <a class="btn" href="#contact">STARTE DEIN TRAINING ↗</a>
+    </section>
+
+    <section id="about">
+      <div class="eyebrow">MEHR ALS BOXEN</div>
+      <h2>BAUE DEINE<br>ZUKUNFT.</h2>
+      <p style="color:#aaa;line-height:1.8;max-width:650px">
+        Technik, Ausdauer und mentale Stärke. Entdecke dein Potenzial
+        in einer motivierenden Trainingsumgebung.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <div class="number">01</div>
+          <h3>DISZIPLIN</h3>
+          <p>Arbeite an dir selbst und werde jeden Tag stärker.</p>
+        </article>
+        <article class="card">
+          <div class="number">02</div>
+          <h3>TECHNIK</h3>
+          <p>Verbessere deine Boxtechnik, Beinarbeit und Präzision.</p>
+        </article>
+        <article class="card">
+          <div class="number">03</div>
+          <h3>TEAMGEIST</h3>
+          <p>Trainiere gemeinsam und unterstütze deine Trainingspartner.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="training">
+      <div class="eyebrow">DEIN NÄCHSTER SCHRITT</div>
+      <h2>TRAIN HARD.<br>FIGHT SMART.</h2>
+      <p style="color:#aaa;line-height:1.8;max-width:600px">
+        Ob Anfänger oder erfahrener Boxer: Finde heraus, welches Training
+        zu deinen Zielen passt.
+      </p>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="eyebrow">BIST DU BEREIT?</div>
+      <h2>DEINE RUNDE<br>BEGINNT JETZT.</h2>
+      <p>Kontaktiere den Club und informiere dich über Probetrainings.</p>
+      <a class="btn" href="mailto:info@boxclub-basel.ch?subject=Anfrage%20Probetraining">
+        KONTAKT AUFNEHMEN ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 BOXCLUB BASEL</div>
+    <div>TRAIN HARD. FIGHT SMART.</div>
+  </footer>
+</body>
+</html>
