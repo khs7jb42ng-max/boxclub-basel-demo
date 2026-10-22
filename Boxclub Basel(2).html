@@ -134,3 +134,121 @@ print({k:len(v)//1024 for k,v in dict(css=css,content=content(IMG_PATHS),ui=ui_j
 PYEOF
 cd /home/claude/build && python3 build.py
   {"returncode":0,"stdout":"{'css': 13, 'content': 13, 'ui': 17, 'scene': 24, 'single': 1249}\n","stderr":""}
+    
+<!-- BOXCLUB BASEL: BLACK SCREEN RECOVERY -->
+<style>
+html.bc-recovery,
+html.bc-recovery body {
+  height: auto !important;
+  min-height: 100% !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+html.bc-recovery #fade {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+html.bc-recovery #scroll {
+  display: none !important;
+  height: 0 !important;
+}
+
+html.bc-recovery #scenes {
+  position: relative !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+html.bc-recovery #scenes .scene {
+  position: relative !important;
+  inset: auto !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  height: auto !important;
+  min-height: 60vh !important;
+  padding: 70px 7vw !important;
+  pointer-events: auto !important;
+}
+
+html.bc-recovery #scenes .scene h1,
+html.bc-recovery #scenes .scene h2,
+html.bc-recovery #scenes .scene p,
+html.bc-recovery #scenes .scene a,
+html.bc-recovery #scenes .scene button {
+  visibility: visible !important;
+}
+
+</style>
+
+<script>
+(function () {
+  "use strict";
+
+  function recoverBlackScreen() {
+    var html = document.documentElement;
+    var root = document.getElementById("scenes");
+    var fade = document.getElementById("fade");
+
+    // Remove the full-screen black overlay.
+    if (fade) {
+      fade.style.setProperty("display", "none", "important");
+      fade.style.setProperty("opacity", "0", "important");
+    }
+
+    // Reveal the original website sections.
+    if (root && root.querySelector(".scene")) {
+      html.classList.add("bc-recovery");
+
+      root.querySelectorAll(".scene").forEach(function (section) {
+        section.style.setProperty("display", "block", "important");
+        section.style.setProperty("visibility", "visible", "important");
+        section.style.setProperty("opacity", "1", "important");
+        section.style.setProperty("transform", "none", "important");
+        section.style.setProperty("position", "relative", "important");
+      });
+
+      return;
+    }
+
+    // If the original script failed before creating sections,
+    // show an error message instead of leaving a black screen.
+    if (root) {
+      html.classList.add("bc-recovery");
+      root.innerHTML =
+        '<section class="scene" style="background:#101010;color:#fff">' +
+        '<p style="color:#ef3038">BOXCLUB BASEL</p>' +
+        '<h1>TRAIN HARD.<br>FIGHT SMART.</h1>' +
+        '<p>The original animation could not start.</p>' +
+        '<p>Please reload the page or check the JavaScript error.</p>' +
+        '<a style="color:#fff" href="https://www.boxclub-basel.ch/" target="_blank" rel="noopener">Official website</a>' +
+        '</section>';
+    }
+  }
+
+  window.addEventListener("error", function () {
+    recoverBlackScreen();
+  });
+
+  window.addEventListener("unhandledrejection", function () {
+    recoverBlackScreen();
+  });
+
+  // Give the original 3D website time to initialize.
+  window.setTimeout(function () {
+    var root = document.getElementById("scenes");
+
+    if (!root || !root.querySelector(".scene")) {
+      recoverBlackScreen();
+    }
+  }, 2500);
+})();
+</script>
+<!-- END BLACK SCREEN RECOVERY -->
+</body>
+</html>
+
